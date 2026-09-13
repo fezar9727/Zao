@@ -21,10 +21,6 @@ public class EstacionTrabajoService {
         return repositorio.findAll();
     }
 
-    public List<EstacionTrabajo> listarActivas() {
-        return repositorio.findByActivaTrue();
-    }
-
     public Optional<EstacionTrabajo> buscarPorId(Long id) {
         return repositorio.findById(id);
     }
@@ -39,7 +35,7 @@ public class EstacionTrabajoService {
     public Optional<EstacionTrabajo> actualizar(Long id, EstacionTrabajo datos) {
         return repositorio.findById(id).map(estacionExistente -> {
             estacionExistente.setNombre(datos.getNombre());
-            estacionExistente.setActiva(datos.isActiva());
+            estacionExistente.setDescripcion(datos.getDescripcion());
             return repositorio.save(estacionExistente);
         });
     }
