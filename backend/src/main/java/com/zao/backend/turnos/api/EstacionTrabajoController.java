@@ -3,6 +3,7 @@ package com.zao.backend.turnos.api;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,11 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Controlador REST del modulo de estaciones de trabajo, bajo /api/estaciones.
- * Este es el controlador que se probara con Postman en AA5 y que consumira
- * el front-end en React en AA4.
+ * Este es el controlador que se probo con Postman en AA5 y que consume
+ * el front-end en React de AA4.
+ *
+ * @CrossOrigin habilita las peticiones desde el frontend React academico
+ * (localhost:3000). Se aplica UNICAMENTE en este controlador, que ya vive
+ * aislado en el paquete academico com.zao.backend.turnos.api -- no afecta
+ * ni modifica ningun otro controlador del proyecto real de Zao.
  */
 @RestController
 @RequestMapping("/api/estaciones")
+@CrossOrigin(origins = "http://localhost:3000")
 public class EstacionTrabajoController {
 
     private final EstacionTrabajoService servicio;
