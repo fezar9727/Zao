@@ -1,5 +1,7 @@
 package com.zao.backend.turnos.api;
 
+import org.springframework.context.annotation.Profile;
+
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
  * Capa de servicio del modulo de estaciones de trabajo: concentra la
  * logica de negocio y las validaciones antes de delegar en el repositorio.
  */
+@Profile("academico")
 @Service
 public class EstacionTrabajoService {
 
