@@ -90,6 +90,17 @@ public class Turno extends EntidadBase {
         this.estado = EstadoTurno.CERRADO;
     }
 
+    /** Actualiza los datos editables del turno: estacion, fecha, horario y marcas. */
+    public void actualizarDatos(Estacion estacion, LocalDate fechaTurno, LocalTime horaInicio,
+                                LocalTime horaFin, boolean esNocturno, boolean esFestivo) {
+        this.estacion = estacion;
+        this.fechaTurno = fechaTurno;
+        this.horaInicio = horaInicio;
+        this.horaFin = horaFin;
+        this.esNocturno = esNocturno;
+        this.esFestivo = esFestivo;
+    }
+
     public Restaurante getRestaurante() {
         return restaurante;
     }
