@@ -1,5 +1,7 @@
 package com.zao.backend.turnos.api;
 
+import org.springframework.context.annotation.Profile;
+
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  * aislado en el paquete academico com.zao.backend.turnos.api -- no afecta
  * ni modifica ningun otro controlador del proyecto real de Zao.
  */
+@Profile("academico")
 @RestController
 @RequestMapping("/api/estaciones")
 @CrossOrigin(origins = "http://localhost:3000")
